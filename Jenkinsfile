@@ -34,7 +34,7 @@ pipeline {
     stages {
         stage('build pre_check') {
             steps {
-                echo 'build pre check script'
+                echo 'master branch build pre check script'
                 sh '''
 				${STORE_DIR}/dingo-setup/pipeline_pre_check.sh ${merge_commit} ${author} ${repo} ${ctime}
 				'''

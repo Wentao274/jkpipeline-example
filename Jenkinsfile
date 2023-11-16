@@ -25,6 +25,6 @@ pipeline {
                       [key: 'author', value: '$.pull_request.user.login'],
                       [key: 'repo', value: '$.repository.name'],
                       [key: 'ctime', value: '$.pull_request.closed_at']
-                      ], token: '123456', regexpFilterText: '$action', regexpFilterExpression: '^.*(closed).*$')
+                      ], token: '111111', regexpFilterText: '$action', regexpFilterExpression: '^.*(closed).*$')
     }
   }

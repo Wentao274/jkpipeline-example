@@ -8,3 +8,4 @@ Configure Steps:
 4. View in BlueOcean and check the branch list correctly
 5. Add WebHook in GitHub repository settings
 6. Modify some files, commit and push to github
+7. check the build trigger

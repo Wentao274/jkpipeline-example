@@ -19,12 +19,17 @@ pipeline {
     STORE_DIR = '/data/dingostore'
   }
   triggers {
-    GenericTrigger(causeString: 'Generic Cause', genericVariables: [
-                      [key: 'action', value: '$.action'],
-                      [key: 'merge_commit', value: '$.pull_request.merge_commit_sha'],
-                      [key: 'author', value: '$.pull_request.user.login'],
-                      [key: 'repo', value: '$.repository.name'],
-                      [key: 'ctime', value: '$.pull_request.closed_at']
-                      ], token: '111111', regexpFilterText: '$action', regexpFilterExpression: '^.*(closed).*$')
+    GenericTrigger(
+	causeString: 'Generic Cause', 
+	genericVariables: [
+		[key: 'action', value: '$.action'],
+		[key: 'merge_commit', value: '$.pull_request.merge_commit_sha'],
+		[key: 'author', value: '$.pull_request.user.login'],
+		[key: 'repo', value: '$.repository.name'],
+		[key: 'ctime', value: '$.pull_request.closed_at']
+	], 
+	token: '111111', 
+	regexpFilterText: '$action', 
+	regexpFilterExpression: '^.*(closed).*$')
     }
   }

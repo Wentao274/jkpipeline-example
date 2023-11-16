@@ -23,7 +23,7 @@ pipeline {
                 [key: 'repo', value: '$.repository.name'],
                 [key: 'ctime', value: '$.pull_request.closed_at']
                 ],
-            token: '123456',
+            token: '111111',
             regexpFilterText: '$action',
             regexpFilterExpression: '^.*(closed).*$'
             
@@ -34,7 +34,7 @@ pipeline {
     stages {
         stage('build pre_check') {
             steps {
-                echo 'build pre check script'
+                echo ' dev build pre check script'
                 sh '''
 				${STORE_DIR}/dingo-setup/pipeline_pre_check.sh ${merge_commit} ${author} ${repo} ${ctime}
 				'''
